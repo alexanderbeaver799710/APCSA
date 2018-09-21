@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Student
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Student\ here.\r\n\r\n\ @author\ (Alex)\r\n\ @version\ (816)\r\n
+comment1.params=
+comment1.target=Student()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n
+comment10.params=
+comment10.target=java.lang.String\ getStudentName()
+comment2.params=paramStudentID\ paramStudentActive\ paramStudentGPA\ paramStudentName
+comment2.target=Student(int,\ boolean,\ double,\ java.lang.String)
+comment2.text=\r\n\ This\ is\ an\ alternate\ constructor\ that\ lets\ you\ add\ in\ all\ of\ the\ data\ without\ of\ the\ setters.\r\n
+comment3.params=paramStudentID
+comment3.target=void\ setStudentID(int)
+comment4.params=paramStudentActive
+comment4.target=void\ setStudentActive(boolean)
+comment5.params=paramStudentGPA
+comment5.target=void\ setStudentGPA(double)
+comment6.params=paramStudentName
+comment6.target=void\ setStudentName(java.lang.String)
+comment7.params=
+comment7.target=int\ getStudentID()
+comment8.params=
+comment8.target=boolean\ getStudentActive()
+comment9.params=
+comment9.target=double\ getStudentGPA()
+numComments=11
