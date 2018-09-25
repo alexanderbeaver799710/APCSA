@@ -35,7 +35,7 @@ public class BallRunner
             }
             if(i == bba.length-1){
                 runLoop = false;
-                
+
             }
             i++;
         }
@@ -47,14 +47,15 @@ public class BallRunner
         return valToReturn;
     }
 
+   
     public static boolean entranceClear(BallBot[] bba, TGPoint entrancePoint){
         boolean rv = false;
-       
+
         int lastSlot = findFreeBallBotIndex(bba)-1; //-1 to account for the last filled slot
         if(lastSlot < 0){
             flagA = 1;
             return false;
-            
+
         }
         TGPoint bbp = bba[lastSlot].getPoint();
         double bbd = Math.sqrt(Math.pow(bbp.xDoubleValue() - entrancePoint.xDoubleValue(),2) + Math.pow(bbp.yDoubleValue() - entrancePoint.yDoubleValue(),2));
@@ -131,36 +132,16 @@ public class BallRunner
             /**
              * Ball Generation
              */
+            
+           if(findFreeBallBotIndex(bba)>=0){
 
-            if(generateBalls){
-                System.out.println("generate balls");
-                if (findFreeBallBotIndex(bba) < 0){
-                    generateBalls = false;
+               if(entranceClear(bba, new TGPoint(0,0)) == true || findFreeBallBotIndex(bba) == 0){
+                   bba[findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
                 }
-                else if(numOfBalls > 0){
-                       if (findFreeBallBotIndex(bba) < 0){
-                        generateBalls = false;
-                    }
-                    else if(entranceClear(bba, new TGPoint(0,0))){
-                        System.out.println("Entrance Clear");
-                        int bbIndex = findFreeBallBotIndex(bba);
-                        bba[bbIndex] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
-                        
-                    }
-
-                    else if(findFreeBallBotIndex(bba) == 0){
-                        int bbIndex = findFreeBallBotIndex(bba);
-                        bba[bbIndex] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
-                    }
-                    
-                }
-                else{
-                    int bbIndex = findFreeBallBotIndex(bba);
-                        bba[bbIndex] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
-                        numOfBalls++;
-                }
-                for(int i = 0; i < findFreeBallBotIndex(bba); i++){
-
+            }
+            
+            for(int i = 0; i <  bba.length; i++){
+                if(bba[i] != null){
                     if(bba[i].canMoveForward(bw)){
                         bba[i].moveForward();
                     }
@@ -168,29 +149,13 @@ public class BallRunner
                         bba[i].setHeading(Math.random()*360);
                     }
                 }
-                
-
             }
             
-        }
-        System.out.println("Exit loop");
-        while(true){
-            for(int i = 0; i < bba.length; i++){
 
-            if(bba[i].canMoveForward(bw)){
-                bba[i].moveForward();
-            }
-            else{
-                bba[i].setHeading(Math.random()*360);
-            }
         }
-
+        // update to GH
         
 
     }
-
-
 }
-}
-
 
