@@ -12,6 +12,7 @@ public class BallRunner
      * Flag to show that the task is ended
      */
     public static int flagA = 0;
+    BallRunner br = new BallRunner();
     /**
      * Constructor for objects of class BallRunner
      */
@@ -24,7 +25,7 @@ public class BallRunner
     /**
      * Helper Functions
      */
-    public static int findFreeBallBotIndex(BallBot[] bba){
+    public int findFreeBallBotIndex(BallBot[] bba){
         boolean runLoop = true;
         int i = 0;
         int valToReturn = -32767;
@@ -42,16 +43,30 @@ public class BallRunner
         return valToReturn;
     }
 
-    public static double distanceBetween(TGPoint pA, TGPoint pB){
+    public double distanceBetween(TGPoint pA, TGPoint pB){
         double valToReturn = Math.sqrt(Math.pow(pA.x-pB.x,2) + Math.pow(pA.y-pB.y,2));
         return valToReturn;
     }
-
-   
-    public static boolean entranceClear(BallBot[] bba, TGPoint entrancePoint){
+    /**
+     * @param bb BallBot being controlled
+     * @param bba BallBot[] to look through
+     */
+    public int bbBounce(BallBot bb, BallBot[] bba, int bbi){
+        int valToReturn = -32767;
+        for(int i = 0; i < bba.length; i++){
+            if(bba[i] != null){
+                if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
+                valToReturn = i;
+            }
+            }
+            
+        }
+    }
+    
+    public boolean entranceClear(BallBot[] bba, TGPoint entrancePoint){
         boolean rv = false;
 
-        int lastSlot = findFreeBallBotIndex(bba)-1; //-1 to account for the last filled slot
+        int lastSlot = br.findFreeBallBotIndex(bba)-1; //-1 to account for the last filled slot
         if(lastSlot < 0){
             flagA = 1;
             return false;
@@ -67,6 +82,8 @@ public class BallRunner
         }
 
     }
+    
+    
 
     public static void activityOne(){
         BallWorld bw = new BallWorld(1920,1080);
@@ -95,7 +112,7 @@ public class BallRunner
         BallRunner ballRunner = new BallRunner();
         boolean generateBalls = true;
         while(generateBalls){
-            int bbIndex = findFreeBallBotIndex(bba);
+            int bbIndex = br.findFreeBallBotIndex(bba);
             if(bbIndex >= 0){
                 bba[bbIndex] = new BallBot(bw,new TGPoint(Math.random()*500, Math.random()*500),Math.random()*360,(int)(Math.random()*50));
             }
@@ -133,15 +150,53 @@ public class BallRunner
              * Ball Generation
              */
             
-           if(findFreeBallBotIndex(bba)>=0){
+           if(br.findFreeBallBotIndex(bba)>=0){
 
-               if(entranceClear(bba, new TGPoint(0,0)) == true || findFreeBallBotIndex(bba) == 0){
-                   bba[findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
+               if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
+                   bba[br.findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
                 }
             }
             
             for(int i = 0; i <  bba.length; i++){
                 if(bba[i] != null){
+                    if(bba[i].canMoveForward(bw)){
+                        bba[i].moveForward();
+                    }
+                    else{
+                        bba[i].setHeading(Math.random()*360);
+                    }
+                }
+            }
+            
+
+        }
+        // update to GH
+        
+
+    }
+    public static void activityFour(){
+        BallWorld bw = new BallWorld(1920,1080);
+        BallBot[] bba = new BallBot[15];
+        BallRunner ballRunner = new BallRunner();
+        boolean generateBalls = true;
+
+        int numOfBalls = 0;
+        boolean runLoop = true;
+        while(runLoop == true){
+            /**
+             * Ball Generation
+             */
+            
+           if(br.findFreeBallBotIndex(bba)>=0){
+
+               if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
+                   bba[br.findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
+                }
+            }
+            
+            for(int i = 0; i <  bba.length; i++){
+                if(bba[i] != null){
+                    
                     if(bba[i].canMoveForward(bw)){
                         bba[i].moveForward();
                     }
