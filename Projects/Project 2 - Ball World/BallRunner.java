@@ -55,10 +55,17 @@ public class BallRunner
         int valToReturn = -32767;
         
         for(int i = 0; i < bba.length; i++){
-            if(bba[i] != null){
-                if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
+            if(bba[i] != null && i != bbi){
+                double ballDistance = distanceBetween(bb.forwardPoint(), bba[i].forwardPoint());
+                double maxRad = 0.0;
+                maxRad = bb.getRadius() + bba[i].getRadius();
+                
+                if(ballDistance <= maxRad){
+                    valToReturn = i;
+                }
+                /*if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
                 valToReturn = i;
-            }
+            }*/
             }
             
         }
@@ -77,7 +84,7 @@ public class BallRunner
         }
         TGPoint bbp = bba[lastSlot].getPoint();
         double bbd = Math.sqrt(Math.pow(bbp.xDoubleValue() - entrancePoint.xDoubleValue(),2) + Math.pow(bbp.yDoubleValue() - entrancePoint.yDoubleValue(),2));
-        if(bbd > 75){
+        if(bbd > 125){
             return true;
         }
         else{
@@ -210,7 +217,7 @@ public class BallRunner
                     if(bbBIndex >0){
                         bba[i].setHeading(Math.random()*360);
                         bba[bbBIndex].setHeading(Math.random()*360);
-                        System.out.println("ENTEREDINDEX");
+                        
                     }
                     if(bba[i].canMoveForward(bw)){
                         bba[i].moveForward();
