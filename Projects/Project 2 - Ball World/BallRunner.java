@@ -12,7 +12,7 @@ public class BallRunner
      * Flag to show that the task is ended
      */
     public static int flagA = 0;
-    
+
     /**
      * Constructor for objects of class BallRunner
      */
@@ -47,46 +47,56 @@ public class BallRunner
         double valToReturn = Math.sqrt(Math.pow(pA.x-pB.x,2) + Math.pow(pA.y-pB.y,2));
         return valToReturn;
     }
+
     /**
      * @param bb BallBot being controlled
      * @param bba BallBot[] to look through
      */
     public int bbBounce(BallBot bb, BallBot[] bba, int bbi){
         int valToReturn = -32767;
-        
+
         for(int i = 0; i < bba.length; i++){
-            if(bba[i] != null){
-                if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
+            if(bba[i] != null && i != bbi){
+                double ballDistance = distanceBetween(bb.forwardPoint(), bba[i].forwardPoint());
+                double maxRad = 0.0;
+                maxRad = bb.getRadius() + bba[i].getRadius();
+
+                if(ballDistance <= maxRad){
+                    valToReturn = i;
+                }
+                /*if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
                 valToReturn = i;
+                }*/
             }
-            }
-            
+
         }
         return valToReturn;
     }
-    
+
     public boolean entranceClear(BallBot[] bba, TGPoint entrancePoint){
         BallRunner br = new BallRunner();
-        boolean rv = false;
+        boolean rv = true;
 
         int lastSlot = br.findFreeBallBotIndex(bba)-1; //-1 to account for the last filled slot
         if(lastSlot < 0){
             flagA = 1;
             return false;
 
+        }else{
+            for(int i = 0; i < br.findFreeBallBotIndex(bba); i++){
+
+                TGPoint bbp = bba[i].getPoint();
+                double bbd = Math.sqrt(Math.pow(bbp.xDoubleValue() - entrancePoint.xDoubleValue(),2) + Math.pow(bbp.yDoubleValue() - entrancePoint.yDoubleValue(),2));
+                if(bbd < 2*bba[i].getRadius()+40){
+                    rv = false;
+                }
+                
+            }
         }
-        TGPoint bbp = bba[lastSlot].getPoint();
-        double bbd = Math.sqrt(Math.pow(bbp.xDoubleValue() - entrancePoint.xDoubleValue(),2) + Math.pow(bbp.yDoubleValue() - entrancePoint.yDoubleValue(),2));
-        if(bbd > 75){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return rv;
 
     }
-    
-    
+
 
     public static void activityOne(){
         BallRunner br = new BallRunner();
@@ -155,14 +165,14 @@ public class BallRunner
             /**
              * Ball Generation
              */
-            
-           if(br.findFreeBallBotIndex(bba)>=0){
 
-               if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
-                   bba[br.findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
+            if(br.findFreeBallBotIndex(bba)>=0){
+
+                if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
+                    bba[br.findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
                 }
             }
-            
+
             for(int i = 0; i <  bba.length; i++){
                 if(bba[i] != null){
                     if(bba[i].canMoveForward(bw)){
@@ -173,11 +183,9 @@ public class BallRunner
                     }
                 }
             }
-            
 
         }
         // update to GH
-        
 
     }
     public static void activityFour(){
@@ -193,14 +201,14 @@ public class BallRunner
             /**
              * Ball Generation
              */
-            
-           if(br.findFreeBallBotIndex(bba)>=0){
 
-               if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
-                   bba[br.findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
+            if(br.findFreeBallBotIndex(bba)>=0){
+
+                if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
+                    bba[br.findFreeBallBotIndex(bba)] = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
                 }
             }
-            
+
             for(int i = 0; i <  bba.length; i++){
                 if(bba[i] != null){
                     /**
@@ -210,7 +218,7 @@ public class BallRunner
                     if(bbBIndex >0){
                         bba[i].setHeading(Math.random()*360);
                         bba[bbBIndex].setHeading(Math.random()*360);
-                        System.out.println("ENTEREDINDEX");
+
                     }
                     if(bba[i].canMoveForward(bw)){
                         bba[i].moveForward();
@@ -220,12 +228,58 @@ public class BallRunner
                     }
                 }
             }
-            
 
         }
-        // update to GH
         
+    }
+    public static void activityFive(){
+        BallWorld bw = new BallWorld(1920,1080);
+        BallRunner br = new BallRunner();
+        BallBot[] bba = new BallBot[25];
+        BallRunner ballRunner = new BallRunner();
+        boolean generateBalls = true;
 
+        int numOfBalls = 0;
+        boolean runLoop = true;
+        while(runLoop == true){
+            /**
+             * Ball Generation
+             */
+
+            if(br.findFreeBallBotIndex(bba)>=0){
+
+                if(br.entranceClear(bba, new TGPoint(0,0)) == true || br.findFreeBallBotIndex(bba) == 0){
+                    int bbfreeindex = br.findFreeBallBotIndex(bba);
+                    BallBot bbTemplate = new BallBot(bw,new TGPoint(0,0),Math.random()*360,(int)(Math.random()*50));
+                    bbTemplate.setColor((int)(Math.random()*32));
+                    bbTemplate.setPixelsPerSecond((int)(Math.random()*100)+50);
+                    bba[bbfreeindex] = bbTemplate;
+
+                }
+            }
+
+            for(int i = 0; i <  bba.length; i++){
+                if(bba[i] != null){
+                    /**
+                     * BallBotBounceIndex
+                     */
+                    int bbBIndex = br.bbBounce(bba[i],bba,i);
+                    if(bbBIndex >0){
+                        bba[i].setHeading(Math.random()*360);
+                        bba[bbBIndex].setHeading(Math.random()*360);
+
+                    }
+                    if(bba[i].canMoveForward(bw)){
+                        bba[i].moveForward( );
+                    }
+                    else{
+                        bba[i].setHeading(Math.random()*360);
+                    }
+                }
+            }
+
+        }
+        
     }
 }
 
