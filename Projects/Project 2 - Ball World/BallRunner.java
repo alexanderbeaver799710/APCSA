@@ -64,6 +64,8 @@ public class BallRunner
                 if(ballDistance <= maxRad){
                     valToReturn = i;
                 }
+                
+                
                 /*if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
                 valToReturn = i;
                 }*/
@@ -264,19 +266,24 @@ public class BallRunner
                      * BallBotBounceIndex
                      */
                     int bbBIndex = br.bbBounce(bba[i],bba,i);
+                    BallBot currBallBot = bba[i];
                     if(bbBIndex >0){
-                        bba[i].setPixelsPerSecond(0);
-                        bba[i].setHeading(Math.random()*360);
+                        currBallBot.setPixelsPerSecond(0);
+                        currBallBot.setHeading(Math.random()*360);
                         bba[bbBIndex].setHeading(Math.random()*360);
 
                     }
-                    if(bba[i].canMoveForward(bw)){
-                        bba[i].moveForward( );
-                        bba[i].setPixelsPerSecond(bba[i].getPixelsPerSecond() + 2);
+                    if((currBallBot.forwardPoint().x >= 960) || (currBallBot.forwardPoint().x <= -960) || (currBallBot.forwardPoint().y >= 540) || (currBallBot.forwardPoint().y <= -540)){
+                        currBallBot.setHeading(180-2*(currBallBot.getHeading()));
+                    }
+                    if(currBallBot.canMoveForward(bw)){
+                        currBallBot.moveForward();
+                        
                     }
                     else{
-                        bba[i].setHeading(Math.random()*360);
+                        currBallBot.setHeading(Math.random()*360);
                     }
+                    bba[i] = currBallBot;
                 }
             }
 
