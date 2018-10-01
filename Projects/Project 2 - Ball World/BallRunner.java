@@ -265,12 +265,14 @@ public class BallRunner
                      */
                     int bbBIndex = br.bbBounce(bba[i],bba,i);
                     if(bbBIndex >0){
+                        bba[i].setPixelsPerSecond(0);
                         bba[i].setHeading(Math.random()*360);
                         bba[bbBIndex].setHeading(Math.random()*360);
 
                     }
                     if(bba[i].canMoveForward(bw)){
                         bba[i].moveForward( );
+                        bba[i].setPixelsPerSecond(bba[i].getPixelsPerSecond() + 2);
                     }
                     else{
                         bba[i].setHeading(Math.random()*360);
