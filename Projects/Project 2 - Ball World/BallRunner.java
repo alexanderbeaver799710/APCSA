@@ -3,7 +3,7 @@ import java.*;
  * Write a description of class BallRunner here.
  *
  * @author (Alex)
- * @version (Proj 2)
+ * @version (Proj 2) 
  */
 public class BallRunner
 {
@@ -42,7 +42,7 @@ public class BallRunner
                 valToReturn = i;
             }
             if(i == bba.length-1){
-                runLoop = false;
+                runLoop = false; // No open slots; Returns -32767
 
             }
             i++;
@@ -57,7 +57,7 @@ public class BallRunner
      * @return the distance between two points
      */
     public double distanceBetween(TGPoint pA, TGPoint pB){
-        double valToReturn = Math.sqrt(Math.pow(pA.x-pB.x,2) + Math.pow(pA.y-pB.y,2));
+        double valToReturn = Math.sqrt(Math.pow(pA.x-pB.x,2) + Math.pow(pA.y-pB.y,2)); //Get the shortest distance between both
         return valToReturn;
     }
 
@@ -74,16 +74,14 @@ public class BallRunner
             if(bba[i] != null && i != bbi){
                 double ballDistance = distanceBetween(bb.forwardPoint(), bba[i].forwardPoint());
                 double maxRad = 0.0;
-                maxRad = bb.getRadius() + bba[i].getRadius();
+                maxRad = bb.getRadius() + bba[i].getRadius(); //Both radii to ensure that they don't merge
 
                 if(ballDistance <= maxRad){
                     valToReturn = i;
                 }
                 
                 
-                /*if(bb.forwardPoint() == bba[i].forwardPoint() && i != bbi){
-                valToReturn = i;
-                }*/
+               
             }
 
         }
@@ -200,9 +198,7 @@ public class BallRunner
         int numOfBalls = 0;
         boolean runLoop = true;
         while(runLoop == true){
-            /**
-             * Ball Generation
-             */
+            //Ball generation
 
             if(br.findFreeBallBotIndex(bba)>=0){
 
@@ -241,9 +237,7 @@ public class BallRunner
         int numOfBalls = 0;
         boolean runLoop = true;
         while(runLoop == true){
-            /**
-             * Ball Generation
-             */
+           //Ball Generation
 
             if(br.findFreeBallBotIndex(bba)>=0){
 
@@ -286,9 +280,7 @@ public class BallRunner
         int numOfBalls = 0;
         boolean runLoop = true;
         while(runLoop == true){
-            /**
-             * Ball Generation
-             */
+            //Ball Generation
 
             if(br.findFreeBallBotIndex(bba)>=0){
 
@@ -310,8 +302,8 @@ public class BallRunner
                     BallBot currBallBot = bba[i];
                     if(bbBIndex >0){
                       
-                        currBallBot.setHeading(Math.random()*360);
-                        bba[bbBIndex].setHeading(Math.random()*360);
+                        currBallBot.setHeading(180-2*(currBallBot.getHeading()));
+                        bba[bbBIndex].setHeading(180-2*(bba[bbBIndex].getHeading()));
 
                     }
                     if((currBallBot.forwardPoint().x >= 960) || (currBallBot.forwardPoint().x <= -960) || (currBallBot.forwardPoint().y >= 540) || (currBallBot.forwardPoint().y <= -540)){
