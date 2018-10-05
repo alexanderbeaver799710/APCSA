@@ -1,0 +1,55 @@
+Project documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-sourcepath
+C:\Users\androidnoob\Documents\GitHub\APCSA\Labs\Lab1005\Lab1005
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.11.jar;C:\Program Files (x86)\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\BlueJ\lib\lang-stride.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\androidnoob\Documents\GitHub\APCSA\Labs\Lab1005\Lab1005
+-d
+C:\Users\androidnoob\Documents\GitHub\APCSA\Labs\Lab1005\Lab1005\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-doctitle
+Lab1005
+-windowtitle
+Lab1005
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-link
+http://download.oracle.com/javase/8/docs/api/
+<---- end of javadoc command ---->
+javadoc: error - No packages or classes specified.
+Usage: javadoc [options] [packagenames] [sourcefiles] [@files]
+  -overview <file>                 Read overview documentation from HTML file
+  -public                          Show only public classes and members
+  -protected                       Show protected/public classes and members (default)
+  -package                         Show package/protected/public classes and members
+  -private                         Show all classes and members
+  -help                            Display command line options and exit
+  -doclet <class>                  Generate output via alternate doclet
+  -docletpath <path>               Specify where to find doclet class files
+  -sourcepath <pathlist>           Specify where to find source files
+  -classpath <pathlist>            Specify where to find user class files
+  -cp <pathlist>                   Specify where to find user class files
+  -exclude <pkglist>               Specify a list of packages to exclude
+  -subpackages <subpkglist>        Specify subpackages to recursively load
+  -breakiterator                   Compute first sentence with BreakIterator
+  -bootclasspath <pathlist>        Override location of class files loaded
+                                   by the bootstrap class loader
+  -source <release>                Provide source compatibility with specified release
+  -extdirs <dirlist>               Override location of installed extensions
+  -verbose                         Output messages about what Javadoc is doing
+  -locale <name>                   Locale to be used, e.g. en_US or en_US_WIN
+  -encoding <name>                 Source file encoding name
+  -quiet                           Do not display status messages
+  -J<flag>                         Pass <flag> directly to the runtime system
+  -X                               Print a synopsis of nonstandard options and exit
+
+1 error
