@@ -25,17 +25,8 @@ public class GibberishRunner
         WordList5000 wl= new WordList5000();
         Gibberish g = new Gibberish();
         String gibberish = g.makeGibberish(wl);
+        
         System.out.println(gibberish);
     }
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
 }
