@@ -7,20 +7,18 @@
  */
 public class GibberishRunner
 {
-    // instance variables - replace the example below with your own
-    private int x;
     
-
     /**
      * Constructor for objects of class GibberishRunner
      */
     public GibberishRunner()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
     
-    
+    /**
+     * The runner method for the Gibberish class. Create a WordList 5000 and makes/prints a parsed gibberish MadLib
+     */
     public static void main(){
         WordList5000 wl= new WordList5000();
         Gibberish g = new Gibberish();

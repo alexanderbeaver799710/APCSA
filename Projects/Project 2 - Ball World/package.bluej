@@ -1,8 +1,8 @@
 #BlueJ package file
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=738
+editor.fx.0.width=816
+editor.fx.0.x=552
+editor.fx.0.y=141
 objectbench.height=155
 objectbench.width=760
 package.divider.horizontal=0.6
@@ -25,7 +25,7 @@ readme.x=10
 readme.y=10
 target1.height=50
 target1.name=BallRunner
-target1.showInterface=false
+target1.showInterface=true
 target1.type=ClassTarget
 target1.width=90
 target1.x=236
