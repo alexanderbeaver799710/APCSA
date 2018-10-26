@@ -9,7 +9,10 @@ import java.*;
  */
 public class main
 {
-    
+    /*
+     * 
+     * NOTE: There is one question where a point was removed. 
+     */
 
     /**
      * Constructor for objects of class main
