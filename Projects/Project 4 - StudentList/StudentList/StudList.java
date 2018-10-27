@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 /**
  * Write a description of class StudList here.
  *
@@ -7,28 +9,44 @@
  */
 public class StudList
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    ArrayList<Student> studentList = new ArrayList<Student>();
+
 
     /**
      * Constructor for objects of class StudList
      */
     public StudList()
     {
-        // initialise instance variables
-        x = 0;
+
     }
 
-    public static void addStudent(){
+    public void addStudent(String firstName, String lastName, String middleName, int studentNumber, double gpa){
+        studentList.add(new Student(firstName, lastName, middleName, studentNumber, gpa));
     }
-    public static void deleteStudent(){
+    public void deleteStudent(){
     }
-    public static void editStudentList(){
+    public void editStudentList(){
     }
-    public static void clearList(){
+    public void clearList(){
     }
-    public static void printList(){
+    public void printList(){
+        System.out.println("===================================");
+        for(Student student : studentList){
+
+            System.out.println("Name: " + student.getFullName() + " | Student ID: " + student.getStuNumber() + " | GPA: " + student.getGPA());
+        }
+        System.out.println("===================================");
+
     }
-    public static void printStudent(){
+    public void printStudent(int id){
+        for(Student studentObject : studentList){
+            if(studentObject.getStuNumber() == id){
+                System.out.println("===================================");
+                System.out.println("Name: "+ studentObject.getFullName());
+                System.out.println("Student #: "+studentObject.getStuNumber());
+                System.out.println("GPA: "+studentObject.getGPA());
+                System.out.println("===================================");
+            }
+        }
     }
 }
