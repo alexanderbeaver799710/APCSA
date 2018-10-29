@@ -25,7 +25,6 @@ public class Student
     }
 
     public String getFullName(){
-        
     }
     public double getGPA(){
     }
