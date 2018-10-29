@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-
+import java.util.*;
 /**
  * Write a description of class StudList here.
  *
@@ -44,13 +44,16 @@ public class StudList
      * Prints the list to the console in a tabular manner
      */
     public void printList(){
-        System.out.println("===================================");
+        ConsoleMethods.clearScreen();
+      
         for(Student student : studentList){
 
             System.out.println("Name: " + student.getFullName() + " | Student ID: " + student.getStuNumber() + " | GPA: " + student.getGPA());
         }
-        System.out.println("===================================");
 
+
+        Scanner s = new Scanner(System.in);
+        String wait = s.nextLine();
     }
 
     /**
@@ -60,14 +63,19 @@ public class StudList
     public void printStudent(int id){
         for(Student studentObject : studentList){
             if(studentObject.getStuNumber() == id){
-                System.out.println("===================================");
+
                 System.out.println("Name: "+ studentObject.getFullName());
                 System.out.println("Student #: "+studentObject.getStuNumber());
                 System.out.println("GPA: "+studentObject.getGPA());
-                System.out.println("===================================");
+
             }
         }
     }
+    
+    /**
+     * Prints the student and UI given a name
+     * 
+     */
     public void printStudent(String studentName){
 
         int indexToPrint = -1;
@@ -81,11 +89,11 @@ public class StudList
         }
         if(indexToPrint > -1){
             Student student = studentList.get(indexToPrint);
-            System.out.println("===================================");
+
             System.out.println("Name: "+ student.getFullName());
             System.out.println("Student #: "+student.getStuNumber());
             System.out.println("GPA: "+student.getGPA());
-            System.out.println("===================================");
+
 
         } else{
             System.out.println("Not Found");
@@ -137,6 +145,9 @@ public class StudList
         }
 
     }
+    /**
+     * Edits the student given an ID
+     */
     public void editStudent(int studentID){
         int indexToEdit = -1;
         for(Student student : studentList){
@@ -149,6 +160,9 @@ public class StudList
 
         }
     }
+    /**
+     * Edits the student given a name
+     */
     public void editStudent(String studentName){
 
         int indexToEdit = -1;
