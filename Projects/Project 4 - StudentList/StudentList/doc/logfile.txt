@@ -1,0 +1,47 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.11.jar;C:\Program Files (x86)\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\BlueJ\lib\lang-stride.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\+libs\commons-lang3-3.8.1.jar;C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList
+-d
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_144
+Building tree for all the packages and classes...
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\Student.html...
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:101: warning - @return tag cannot be used in method with void return type.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:153: warning - @param argument "String" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:153: warning - @param argument "String" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:153: warning - @param argument "String" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:64: warning - @param argument "String" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:94: warning - @param argument "double" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:78: warning - @param argument "String" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:71: warning - @param argument "String" is not a parameter name.
+C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\Student.java:86: warning - @param argument "int" is not a parameter name.
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\package-frame.html...
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\package-summary.html...
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\allclasses-frame.html...
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\allclasses-noframe.html...
+Generating C:\Users\androidnoob\Documents\GitHub\APCSA\Projects\Project 4 - StudentList\StudentList\doc\index.html...
+9 warnings
