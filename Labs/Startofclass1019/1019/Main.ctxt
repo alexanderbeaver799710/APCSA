@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Main
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Main\ here.\r\n\r\n\ @author\ (Alex\ Beaver)\r\n\ @version\ (1019\ -\ Warmup)\r\n
+comment1.params=
+comment1.target=Main()
+comment2.params=keyString\ searchString
+comment2.target=int\ strOccurs(java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ Gets\ the\ number\ of\ occurences\ of\ the\ key\ in\ the\ search\ string\r\n\ @param\ \ \ keyString\ \ \ \ \ \ \ the\ value\ that\ will\ be\ searched\ for\r\n\ @param\ \ \ searchString\ \ \ \ the\ string\ that\ will\ be\ searched\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The\ number\ of\ occurances\ of\ keyString\ in\ searchString\r\n
+comment3.params=
+comment3.target=void\ main()
+numComments=4

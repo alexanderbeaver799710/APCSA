@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=UserInputTypes
+comment1.params=format
+comment1.target=UserInputTypes(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ get()
+numComments=3
