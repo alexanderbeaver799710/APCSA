@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=StudListRunner
+comment0.text=\n\ Write\ a\ description\ of\ class\ StudListRunner\ here.\n\n\ @author\ (Alex\ Beaver)\n\ @version\ (25\ October\ 2018)\n
+comment1.params=
+comment1.target=StudListRunner()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ StudListRunner\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\n\ Runner\ function\ for\ the\ program\n\ @param\ args\n
+comment3.params=
+comment3.target=int\ generateMenu()
+comment3.text=\n\ Generates\ the\ main\ menu\ for\ the\ program\n\ @return\ \ the\ choice\ corresponding\ to\ the\ MenuOption\ Enum\n
+comment4.params=
+comment4.target=void\ addStudentToList()
+comment4.text=\n\ Loads\ the\ interface\ to\ add\ a\ student\ to\ the\ list\n
+comment5.params=
+comment5.target=void\ deleteStudentFromList()
+comment5.text=\n\ Loads\ the\ interface\ to\ delete\ a\ student\ from\ the\ list\n
+comment6.params=
+comment6.target=void\ editStudentList()
+comment7.params=
+comment7.target=void\ clearList()
+comment8.params=
+comment8.target=void\ printAll()
+comment9.params=
+comment9.target=void\ printStudent()
+numComments=10
