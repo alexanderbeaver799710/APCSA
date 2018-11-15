@@ -1,16 +1,27 @@
 #BlueJ class context
 comment0.target=Student
+<<<<<<< HEAD
 comment0.text=\n\ Write\ a\ description\ of\ class\ Student\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=fn\ ln\ mn\ stuNum\ pGPA
 comment1.target=Student(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ double)
 comment1.text=\n\ Create\ a\ new\ Student\n\ @param\ fn\ \ \ \ \ \ \ \ first\ name\ of\ the\ student\n\ @param\ ln\ \ \ \ \ \ \ \ last\ name\ of\ the\ student\n\ @param\ mn\ \ \ \ \ \ \ \ middle\ name\ of\ the\ student\n\ @param\ stuNum\ \ \ \ student\ number\ of\ the\ student\n\ @param\ pGPA\ \ \ \ \ \ GPA\ of\ the\ student\n
+=======
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Student\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=fn\ ln\ mn\ stuNum\ pGPA
+comment1.target=Student(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ double)
+comment1.text=\r\n\ Create\ a\ new\ Student\r\n\ @param\ fn\ \ \ \ \ \ \ \ first\ name\ of\ the\ student\r\n\ @param\ ln\ \ \ \ \ \ \ \ last\ name\ of\ the\ student\r\n\ @param\ mn\ \ \ \ \ \ \ \ middle\ name\ of\ the\ student\r\n\ @param\ stuNum\ \ \ \ student\ number\ of\ the\ student\r\n\ @param\ pGPA\ \ \ \ \ \ GPA\ of\ the\ student\r\n
+>>>>>>> cdabc76004d1552efd4654218775b43287a4d85b
 comment10.params=
 comment10.target=void\ edit()
 comment11.params=lastName\ firstName\ middleName
 comment11.target=java.lang.String\ generateFullName(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment12.params=rawStudentName
 comment12.target=java.lang.String[]\ parseUserInput(java.lang.String)
+<<<<<<< HEAD
 comment12.text=\n\ Returns\ the\ user\ input\ for\ a\ name\ in\ a\ standardized\ manner\n\ @param\ rawStudentName\n\ @return\ First\ Last\ M\ of\ input\n
+=======
+comment12.text=\r\n\ Returns\ the\ user\ input\ for\ a\ name\ in\ a\ standardized\ manner\r\n\ @param\ rawStudentName\r\n\ @return\ First\ Last\ M\ of\ input\r\n
+>>>>>>> cdabc76004d1552efd4654218775b43287a4d85b
 comment2.params=
 comment2.target=java.lang.String\ getFullName()
 comment3.params=

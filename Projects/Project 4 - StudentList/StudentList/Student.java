@@ -39,60 +39,97 @@ public class Student
        gpa = pGPA;
     }
 
+    /**
+     * Returns the full name of the given student
+     */
     public String getFullName(){
         return lastName + ", " + firstName + " " + middleName;
     }
+    /**
+     * Returns the GPA of the given student
+     */
     public double getGPA(){
         return gpa;
     }
+    /**
+     * Returns the student number of the given student
+     */
     public int getStuNumber(){
         return stuNumber;
     }
+    /**
+     * Sets the first name
+     * @param   String    First Name
+     */
     public void setFirstName(String s){
         firstName = s;
     }
+    /**
+     * Sets the middle name
+     * @param   String  Middle Name
+     */
     public void setMiddleName(String s){
         middleName = s;
     }
+    /**
+     * Sets the last name
+     * @param   String  Last Name
+     */
     public void setLastName(String s){
         lastName = s;
     }
 
+    /**
+     * Sets the student number
+     * @param   int     Student Number
+     */
     public void setStuNumber(int stuNumber) {
         this.stuNumber = stuNumber;
     }
 
+    /**
+     * Sets the GPA
+     * @param   double  GPA
+     */
     public void setGpa(double gpa) {
         this.gpa = gpa;
     }
-
+    /**
+     * Allows editing of a given student
+     * @return updated student into the array
+     */
     public void edit() {
         boolean run = true;
         Scanner s = new Scanner(System.in);
         while(run){
-            System.out.println("===================================");
+            ConsoleMethods.clearScreen();
+
             System.out.println("Name: "+ getFullName());
             System.out.println("Student #: "+getStuNumber());
             System.out.println("GPA: "+getGPA());
-            System.out.println("===================================");
+
             System.out.println("What would you like to edit?");
             System.out.println("1 Name | 2 # | 3 GPA | 4 DONE");
             int action = s.nextInt();
             if(action == 1){
+                System.out.println(getFullName());
                 System.out.println("What should their name be?");
+                String clearInputStream = s.nextLine();
                 String userRawName = s.nextLine();
-                String username = userRawName;
-                String[] nameArr = parseUserInput(username);
+
+                String[] nameArr = parseUserInput(userRawName);
                 setFirstName(nameArr[0]);
                 setLastName(nameArr[1]);
                 setMiddleName(nameArr[2]);
             }
             else if(action == 2){
+                System.out.println(getFullName());
                 System.out.println("What should their Student ID be?");
                 int sid = s.nextInt();
                 setStuNumber(sid);
             }
             else if(action == 3){
+                System.out.println(getFullName());
                 System.out.println("What should their GPA be?");
                 double GPA = s.nextDouble();
                 setGpa(GPA);
@@ -106,6 +143,13 @@ public class Student
     }
 
 
+    /**
+     * Generates a full name given based off of the parameters given
+     * @param   String  Last Name
+     * @param   String  First Name
+     * @param   String  Middle name
+     * @return  String  last, first m
+     */
     public static String generateFullName(String lastName, String firstName, String middleName){
         return lastName + ", " + firstName + " " + middleName;
     }

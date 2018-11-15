@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=StudListRunner
+<<<<<<< HEAD
 comment0.text=\n\ Write\ a\ description\ of\ class\ StudListRunner\ here.\n\n\ @author\ (Alex\ Beaver)\n\ @version\ (25\ October\ 2018)\n
 comment1.params=
 comment1.target=StudListRunner()
@@ -16,6 +17,24 @@ comment4.text=\n\ Loads\ the\ interface\ to\ add\ a\ student\ to\ the\ list\n
 comment5.params=
 comment5.target=void\ deleteStudentFromList()
 comment5.text=\n\ Loads\ the\ interface\ to\ delete\ a\ student\ from\ the\ list\n
+=======
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ StudListRunner\ here.\r\n\r\n\ @author\ (Alex\ Beaver)\r\n\ @version\ (25\ October\ 2018)\r\n
+comment1.params=
+comment1.target=StudListRunner()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StudListRunner\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ Runner\ function\ for\ the\ program\r\n\ @param\ args\r\n
+comment3.params=
+comment3.target=java.lang.String\ generateMenu()
+comment3.text=\r\n\ Generates\ the\ main\ menu\ for\ the\ program\r\n\ @return\ \ the\ choice\ corresponding\ to\ the\ MenuOption\ Enum\r\n
+comment4.params=
+comment4.target=void\ addStudentToList()
+comment4.text=\r\n\ Loads\ the\ interface\ to\ add\ a\ student\ to\ the\ list\r\n
+comment5.params=
+comment5.target=void\ deleteStudentFromList()
+comment5.text=\r\n\ Loads\ the\ interface\ to\ delete\ a\ student\ from\ the\ list\r\n
+>>>>>>> cdabc76004d1552efd4654218775b43287a4d85b
 comment6.params=
 comment6.target=void\ editStudentList()
 comment7.params=
