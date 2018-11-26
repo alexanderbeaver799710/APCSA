@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Cell
+comment0.text=\r\n\ @author\ (Alex\ Beaver)\ \r\n\ @version\ (11\ 26\ 18)\r\n
+comment1.params=a
+comment1.target=Cell(int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Cell\r\n
+comment2.params=a
+comment2.target=void\ addNeighbor(int)
+comment3.params=
+comment3.target=int\ getNeighborsSum()
+comment3.text=\r\n\ ++++++++++++++\ \ methods\r\n
+comment4.params=
+comment4.target=int\ getInt()
+numComments=5

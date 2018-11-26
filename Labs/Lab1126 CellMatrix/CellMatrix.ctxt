@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CellMatrix
+comment0.text=\r\n\ \r\n\ CellMatrix\r\n\ @author\ (Alex\ Beaver)\ \r\n\ @version\ (11-26-18)\r\n
+comment1.params=a\ b
+comment1.target=CellMatrix(int,\ int)
+comment1.text=\r\n\ +++++++++++++++++++++Constructor\ for\ objects\ of\ class\ NumberMatrix\r\n
+comment2.params=
+comment2.target=void\ loadNeighbors()
+comment3.params=
+comment3.target=void\ printMatrix()
+comment3.text=\r\n\ +++++++++++++++++++++++++++++++++++++++++++++++++++++++methods\r\n
+comment4.params=
+comment4.target=void\ loadMatrix()
+comment5.params=
+comment5.target=int\ getGreatestNeighbors()
+numComments=6
