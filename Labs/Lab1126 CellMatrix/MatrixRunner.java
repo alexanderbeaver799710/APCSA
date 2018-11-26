@@ -8,7 +8,7 @@
 public class MatrixRunner{
     
     public static void main(){
-      CellMatrix cm = new CellMatrix(3, 4);  
+      CellMatrix cm = new CellMatrix(10, 10);  
       cm.loadMatrix();
       System.out.println("==============");
       cm.printMatrix();
