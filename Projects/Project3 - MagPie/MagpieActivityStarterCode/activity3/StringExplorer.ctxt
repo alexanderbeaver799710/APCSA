@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.target=StringExplorer
-comment0.text=\n\ A\ program\ to\ allow\ students\ to\ try\ out\ different\ \n\ String\ methods.\ \n\ @author\ Laurie\ White\n\ @version\ April\ 2012\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2
